@@ -40,7 +40,7 @@ public class Generator {
             int currentNumberOfTemporaryHouseholdBooks = 0;
             for (int i = 0; i < numberOfPermanentHouseholdBooks + numberOfTemporaryHouseholdBooks; ++i) {
                 String householdBookID = String.format("%09d", i);
-                String householderID = String.format("%011d", numberOfResidents);
+                String householderID = String.format("%012d", numberOfResidents);
                 String address = String.format("Số %d tổ dân phố 7 phường La Khê", i + 1);
                 LocalDate issueDate = randomDate(LocalDate.of(1975, 1, 1), LocalDate.of(2024, 12, 31));
                 String status;
@@ -83,7 +83,7 @@ public class Generator {
                 String[] header = { "ResidentID", "HouseholdBookID", "IDIssueDate", "IDIssuePlace", "FullName", "Alias", "DateOfBirth", "PlaceOfBirth", "Hometown", "Ethnicity", "Occupation", "Workplace", "PermanentRegistrationDate", "PermanentResidentAddress", "IsDead" };
                 writer.writeNext(header);
             }
-            String residentID = String.format("%011d", numberOfResidents++);
+            String residentID = String.format("%012d", numberOfResidents++);
             LocalDate IDIssueDate = randomDate(LocalDate.of(2022, 1, 1), LocalDate.of(2024, 12, 31));
             String lastName = FAKER.name().lastName();
             String fullName = lastName + " " + FAKER.name().malefirstName();
@@ -94,7 +94,7 @@ public class Generator {
             LocalDate permanentRegistrationDate = randomDate(dateOfBirth.isAfter(issueDate) ? dateOfBirth : issueDate, LocalDate.of(2024, 12, 31));
             writer.writeNext(new String[] { residentID, householdBookID, IDIssueDate.toString(), "Cục cảnh sát quản lý về trật tự xã hội", fullName, null, dateOfBirth.toString(), placeOfBirth, hometown, ethnicity, null, null, permanentRegistrationDate.toString(), address, "false" });
             if (RANDOM.nextBoolean()) {
-                residentID = String.format("%011d", numberOfResidents++);
+                residentID = String.format("%012d", numberOfResidents++);
                 IDIssueDate = randomDate(LocalDate.of(2022, 1, 1), LocalDate.of(2024, 12, 31));
                 fullName = FAKER.name().lastName() + " " + FAKER.name().femaleFirstName();
                 dateOfBirth = randomDate(dateOfBirth, dateOfBirth.plusYears(1));
@@ -107,7 +107,7 @@ public class Generator {
                 generateDependents(householdBookID, residentID, "wife");
             }
             for (int i = 0; i < RANDOM.nextInt(3); ++i) {
-                residentID = String.format("%011d", numberOfResidents++);
+                residentID = String.format("%012d", numberOfResidents++);
                 fullName = lastName + " " + FAKER.name().firstName();
                 LocalDate dateOfBirthOfChild = randomDate(dateOfBirth.plusYears(20), dateOfBirth.plusYears(24));
                 IDIssueDate = dateOfBirthOfChild.isBefore(LocalDate.of(2022, 1, 1)) ? randomDate(LocalDate.of(2022, 1, 1), LocalDate.of(2024, 12, 31)) : dateOfBirthOfChild;
@@ -131,7 +131,7 @@ public class Generator {
                 String[] header = { "ResidentID", "HouseholdBookID", "IDIssueDate", "IDIssuePlace", "FullName", "Alias", "DateOfBirth", "PlaceOfBirth", "Hometown", "Ethnicity", "Occupation", "Workplace", "PermanentRegistrationDate", "PermanentResidentAddress", "IsDead" };
                 writer.writeNext(header);
             }
-            String residentID = String.format("%011d", numberOfResidents++);
+            String residentID = String.format("%012d", numberOfResidents++);
             LocalDate IDIssueDate = randomDate(LocalDate.of(2022, 1, 1), LocalDate.of(2024, 12, 31));
             String fullName = FAKER.name().fullName();
             LocalDate dateOfBirth = randomDate(LocalDate.of(1950, 1, 1), LocalDate.of(2000, 12, 31));
