@@ -21,7 +21,7 @@ public class UserService {
      * @throws Exception if the username already exists.
      */
     public User register(User user) throws Exception {
-        if (userRepository.existsByUserId(user.getUserName())) {
+        if (userRepository.existsByUserId(user.getUserId())) {
             throw new Exception("Username already exists!");
         }
         // Set initial status for new registrations
@@ -31,7 +31,7 @@ public class UserService {
 
     /**
      * Authenticates a user based on username and password.
-     * @param userName The username.
+     * @param userId The userId.
      * @param password The password.
      * @return An Optional containing the User if login is successful, otherwise an empty Optional.
      */
