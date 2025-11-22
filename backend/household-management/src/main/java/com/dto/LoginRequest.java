@@ -1,15 +1,15 @@
 package com.dto;
 
 public class LoginRequest {
-    private String userId;
+    private String residentId;
     private String password;
 
-    public String getUserId() {
-        return userId;
+    public String getResidentId() {
+        return residentId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setResidentId(String residentId) {
+        this.residentId = residentId;
     }
 
     public String getPassword() {
