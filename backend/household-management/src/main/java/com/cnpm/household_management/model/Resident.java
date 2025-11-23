@@ -10,19 +10,12 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "userdata")
-
-public class User {
+@Table(name = "resident")
+public class Resident {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "residentId", unique = true, nullable = false)
     private String residentId;
-
-    @Column(nullable = false)
-    private String password;
-
-    @Column(nullable = false)
-    private boolean isActive;
 }
