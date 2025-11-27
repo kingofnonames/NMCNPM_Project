@@ -1,4 +1,4 @@
-package com.dto;
+package com.cnpm.household_management.dto;
 
 public class LoginRequest {
     private String residentId;
