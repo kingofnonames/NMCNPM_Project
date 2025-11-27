@@ -1,4 +1,4 @@
-package com.cnpm.service;
+package com.cnpm.household_management.service;
 
 import java.util.List;
 import java.util.Optional;
