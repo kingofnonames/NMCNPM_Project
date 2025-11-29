@@ -1,7 +1,0 @@
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/HouseholdBooksData.csv'
-INTO TABLE householdbook
-CHARACTER SET utf8
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
