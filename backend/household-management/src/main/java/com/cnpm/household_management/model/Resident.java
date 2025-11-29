@@ -11,7 +11,8 @@ import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "resident")
+@Table(name = "Resident")
+
 public class Resident {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

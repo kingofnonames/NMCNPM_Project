@@ -1,4 +1,4 @@
-package com.cnpm.household_management;
+package com.cnpm.household_management.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
