@@ -8,10 +8,10 @@ import com.cnpm.household_management.model.Resident;
 import java.util.Optional;
 
 @Repository
-public interface ResidentRepository extends JpaRepository<Resident, Long> {
+public interface ResidentRepository extends JpaRepository<Resident, String> {
     boolean existsByResidentId(String residentId);
 
     Optional<Resident> findByResidentId(String residentId);
 
-    void deleteByResidentID(String residentId);
+    void deleteByResidentId(String residentId);
 }

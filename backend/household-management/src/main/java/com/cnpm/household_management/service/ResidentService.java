@@ -33,6 +33,6 @@ public class ResidentService {
     }
 
     public void deleteResident(String residentId) {
-        residentRepository.deleteByResidentID(residentId);
+        residentRepository.deleteByResidentId(residentId);
     }
 }
