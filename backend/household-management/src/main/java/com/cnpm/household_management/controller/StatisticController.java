@@ -8,13 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("v1/api/statistics")
+@RequestMapping("v1/api")
 public class StatisticController {
 
     @Autowired
     private StatisticService statisticService;
 
-    @GetMapping("/filter")
+    @GetMapping("/statistics")
     public ResponseEntity<StatisticResponse> filterResidents(@ModelAttribute StatisticRequest request) {
         StatisticResponse response = statisticService.filterResidents(request);
         return ResponseEntity.ok(response);
