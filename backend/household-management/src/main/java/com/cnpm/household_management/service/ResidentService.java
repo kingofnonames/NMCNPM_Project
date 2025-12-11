@@ -9,11 +9,13 @@ import java.util.Optional;
 
 @Service
 public class ResidentService {
-    @Autowired ResidentRepository residentRepository;
+
+    @Autowired
+    ResidentRepository residentRepository;
 
 
     public Resident createResident(Resident resident) throws Exception {
-        if (residentRepository.existsByResidentId(resident.getResidentId())){
+        if (residentRepository.existsById(resident.getResidentId())){
             throw new Exception("Resident ID " + resident.getResidentId() + " exists!");
         }
 
@@ -21,11 +23,11 @@ public class ResidentService {
     }
 
     public Optional<Resident> readResident(String residentId) {
-        return residentRepository.findByResidentId(residentId);
+        return residentRepository.findById(residentId);
     }
 
     public Resident updateResident(Resident resident) {
-        if (!residentRepository.existsByResidentId(resident.getResidentId())) {
+        if (!residentRepository.existsById(resident.getResidentId())) {
             throw new RuntimeException("Resident ID " + resident.getResidentId() + " does not exist!");
         }
 
@@ -33,6 +35,6 @@ public class ResidentService {
     }
 
     public void deleteResident(String residentId) {
-        residentRepository.deleteByResidentId(residentId);
+        residentRepository.deleteById(residentId);
     }
 }
