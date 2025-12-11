@@ -12,13 +12,16 @@ import com.cnpm.household_management.repository.UserRepository;
 
 @Service
 public class UserService {
-    @Autowired private UserRepository userRepository;
 
-    @Autowired private ResidentRepository residentRepository;
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private ResidentRepository residentRepository;
 
 
     public User register(User user) throws Exception {
-        if (!residentRepository.existsByResidentId(user.getResidentId())) {
+        if (!residentRepository.existsById(user.getResidentId())) {
             throw new Exception("Resident ID does not exist in the resident registry!");
         }
 
