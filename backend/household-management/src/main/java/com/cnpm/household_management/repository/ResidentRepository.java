@@ -9,10 +9,6 @@ import com.cnpm.household_management.model.Resident;
 import java.util.Optional;
 
 @Repository
-public interface ResidentRepository extends JpaRepository<Resident, Long>, JpaSpecificationExecutor<Resident> {
-    boolean existsByResidentId(String residentId);
+public interface ResidentRepository extends JpaRepository<Resident, String>, JpaSpecificationExecutor<Resident> {
 
-    Optional<Resident> findByResidentId(String residentId);
-
-    void deleteByResidentId(String residentId);
 }
