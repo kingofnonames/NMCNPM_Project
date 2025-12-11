@@ -5,16 +5,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "Resident")
-
 public class Resident {
     @Id
     @Column(name = "residentId", unique = true, nullable = false)
     private String residentId;
+
+    @Column(name = "householdBookID", nullable = false)
+    private String householdBookID;
 
     @Column(name = "idIssueDate", nullable = false)
     private LocalDate idIssueDate;
@@ -54,7 +59,4 @@ public class Resident {
 
     @Column(name = "isDead", nullable = false)
     private boolean isDead;
-
-    @Column(name = "householdBookID")
-    private String householdBookID;
 }
