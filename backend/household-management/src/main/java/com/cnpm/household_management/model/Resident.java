@@ -2,23 +2,25 @@ package com.cnpm.household_management.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "resident")
+@NoArgsConstructor
+@Table(name = "Resident")
+
 public class Resident {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "residentId", unique = true, nullable = false)
     private String residentId;
+
+    @Column(name = "householdBookID", nullable = false)
+    private String householdBookID;
 
     @Column(name = "idIssueDate", nullable = false)
     private LocalDate idIssueDate;
@@ -53,8 +55,8 @@ public class Resident {
     @Column(name = "permanentRegistrationDate", nullable = false)
     private LocalDate permanentRegistrationDate;
 
-    @Column(name = "permanentResidentAddress", nullable = false)
-    private String permanentResidentAddress;
+    @Column(name = "permanentResidenceAddress", nullable = false)
+    private String permanentResidenceAddress;
 
     @Column(name = "isDead", nullable = false)
     private boolean isDead;
