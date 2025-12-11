@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @Entity
 @NoArgsConstructor
 @Table(name = "Resident")
-
 public class Resident {
     @Id
     @Column(name = "residentId", unique = true, nullable = false)
